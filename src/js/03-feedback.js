@@ -9,8 +9,8 @@ const refs = {
 const STORAGE_KEY = 'feedback-form-state';
 
 let formData = {
-  // email: '',
-  // message: '',
+  email: '',
+  message: '',
 };
 
 populateInfoOutput();
@@ -33,12 +33,12 @@ function onFormSubmit(evt) {
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
+    formData = {};
   }
 
   // refs.input.value = '';
   // refs.textarea.value = '';
-  // formData = {};
-}
+
 
 function populateInfoOutput() {
   const savedData = localStorage.getItem(STORAGE_KEY);
@@ -56,6 +56,7 @@ function populateInfoOutput() {
       formData.message = parsedData.message;
     }
   }
+
   // console.log(parsedData);
 }
 
