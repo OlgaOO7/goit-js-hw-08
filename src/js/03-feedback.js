@@ -38,7 +38,7 @@ function onFormSubmit(evt) {
 
   // refs.input.value = '';
   // refs.textarea.value = '';
-
+}
 
 function populateInfoOutput() {
   const savedData = localStorage.getItem(STORAGE_KEY);
