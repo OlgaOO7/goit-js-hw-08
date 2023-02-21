@@ -44,17 +44,27 @@ function populateInfoOutput() {
   const savedData = localStorage.getItem(STORAGE_KEY);
     const parsedData = JSON.parse(savedData);
 
-    if(savedData) {
-      if(parsedData.email) {
-        // refs.input.value = parsedData.email;
-        refs.input.value = parsedData.email || '';
-        formData.email = parsedData.email;
-    }
-    if(parsedData.message) {
-      // refs.textarea.value = parsedData.message;
-      refs.textarea.value = parsedData.message || '';
-      formData.message = parsedData.message;
-    }
+  //   if(savedData) {
+  //     if(parsedData.email) {
+
+  //       refs.input.value = parsedData.email || '';
+  //       formData.email = parsedData.email;
+  //   }
+  //   if(parsedData.message) {
+  //     // refs.textarea.value = parsedData.message;
+  //     refs.textarea.value = parsedData.message || '';
+  //     formData.message = parsedData.message;
+  //   }
+  // }
+
+  if (!savedData) return 
+  if (parsedData.email) {
+    refs.input.value = parsedData.email || '';
+    formData.email = parsedData.email;
+  }
+  if (parsedData.message) {
+    refs.textarea.value = parsedData.message || '';
+    formData.message = parsedData.message;
   }
 
   // console.log(parsedData);
